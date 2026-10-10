@@ -1,0 +1,23 @@
+{
+  "name": "relief-q-c",
+  "version": "2.0.0",
+  "description": "Priority-Based Disaster Relief Resource Allocation Simulator Rebuilt in C (C11 Core + WebAssembly)",
+  "main": "index.html",
+  "scripts": {
+    "start": "python server.py",
+    "build:wasm": "node scripts/gen_wasm_bytes.js",
+    "test": "gcc -std=c11 -Wall -Wextra -Iinclude tests/test_reliefq.c c_src/memory_pool.c c_src/string_utils.c c_src/resource_array.c c_src/linked_list.c c_src/queue.c c_src/priority_queue.c c_src/stack.c c_src/search_sort.c c_src/reliefq_core.c c_src/json_export.c -o tests/test_reliefq && ./tests/test_reliefq"
+  },
+  "keywords": [
+    "disaster-relief",
+    "data-structures",
+    "c11",
+    "webassembly",
+    "priority-queue",
+    "linked-list",
+    "stack",
+    "queue"
+  ],
+  "author": "RELIEF-Q Team",
+  "license": "MIT"
+}
